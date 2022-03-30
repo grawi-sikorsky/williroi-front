@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MainviewComponent } from '../mainview/mainview.component';
 import { UserModel, ApiAccount } from '../../models/user-model';
 import { UserService } from 'src/app/services/user.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-account',
@@ -12,14 +13,11 @@ export class AccountComponent implements OnInit {
 
   constructor(public userService:UserService, public mainviewComponent:MainviewComponent) { }
 
-  userAccount?:ApiAccount;
+  userModel:UserModel = {}; // binds with userService data on subscribe!
 
   ngOnInit(): void {
-    this.showAccountData();
+    this.userService.currentUserData.subscribe(data => {
+      this.userModel = data;
+    });
   }
-
-  public showAccountData(){
-    this.userAccount = this.userService.userData?.apiAccount;
-  }
-
 }

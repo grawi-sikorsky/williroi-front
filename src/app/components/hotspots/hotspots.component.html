@@ -1,0 +1,24 @@
+<table class="table table-hover">
+    <thead class="thead-light">
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Address</th>
+            <th scope="col">Price</th>
+            <th scope="col">Gain</th>
+            <th scope="col">Elevation</th>
+            <th scope="col">Rewards 24h</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of userModel!.hotspots; let index = index">
+            <td>{{index}}</td>
+            <td>{{item.name}}</td>
+            <td>{{item.address}}</td>
+            <td>{{item.price}}</td>
+            <td>{{item.gain}}</td>
+            <td>{{item.elevation}}</td>
+            <td>{{item.rewards_24}}</td>
+        </tr>
+    </tbody>
+</table>

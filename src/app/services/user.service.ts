@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { UserModel } from '../models/user-model';
 import { environment } from 'src/environments/environment';
+import { BehaviorSubject, Observable, Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -12,11 +13,18 @@ export class UserService {
 
   constructor(private http:HttpClient) { }
 
-  userData?:UserModel;
+  private userData = new Subject<UserModel>();
+  currentUserData = this.userData.asObservable();
+
+  updateUserData(data:UserModel) {
+    this.userData.next(data);
+  }
 
   public getUserData(username:String)
   {
-    return this.http.get<UserModel>( this.API_URL + "/user/" + username);
+    return this.http.get<UserModel>( this.API_URL + "/user/" + username).subscribe( data => {
+        this.updateUserData(data); 
+      });
   }
 
   public refreshAPIhotspots(username:String){

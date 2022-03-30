@@ -9,6 +9,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { UserService } from './services/user.service';
 import { HttpClientModule } from '@angular/common/http';
 import { AccountComponent } from './components/account/account.component';
+import { HotspotsComponent } from './components/hotspots/hotspots.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { AccountComponent } from './components/account/account.component';
     NavbarComponent,
     MainviewComponent,
     FooterComponent,
-    AccountComponent
+    AccountComponent,
+    HotspotsComponent
   ],
   imports: [
     BrowserModule,

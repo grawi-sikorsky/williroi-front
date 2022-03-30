@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../../services/user.service';
 import { UserModel } from '../../models/user-model';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-mainview',
@@ -9,22 +10,16 @@ import { UserModel } from '../../models/user-model';
 })
 export class MainviewComponent implements OnInit {
 
-  userModel?:UserModel;
+  userModel?:UserModel = {};
 
   constructor(public userService:UserService) { }  
 
   ngOnInit(): void {
-    this.getUser();
+    this.userService.getUserData("kloc");
   }
 
   public getUser(){ 
-    this.userService.getUserData("kloc").subscribe( incUser =>
-      {
-        this.userModel=incUser;
-        this.userService.userData = incUser;
-        console.log(incUser);
-      }
-    );
+    this.userService.getUserData("kloc");
   }
 
   public refreshAPIhotspots(){
