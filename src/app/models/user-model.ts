@@ -4,7 +4,7 @@ export class UserModel {
     password?:      string;
     hntAccount?:    string;
     apiAccount?:    ApiAccount; // pojo
-    hotspots?:      Hotspots;   // pojo
+    hotspots?:      Hotspots[];   // pojo
 }
 
 export class ApiAccount {

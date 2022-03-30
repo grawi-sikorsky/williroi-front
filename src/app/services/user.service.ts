@@ -12,8 +12,18 @@ export class UserService {
 
   constructor(private http:HttpClient) { }
 
+  userData?:UserModel;
+
   public getUserData(username:String)
   {
     return this.http.get<UserModel>( this.API_URL + "/user/" + username);
+  }
+
+  public refreshAPIhotspots(username:String){
+    return this.http.get( this.API_URL + "/user/" + username + "/api/hotspots");
+  }
+
+  public refreshAPIaccount(username:String){
+    return this.http.get( this.API_URL + "/user/" + username + "/api/account");
   }
 }

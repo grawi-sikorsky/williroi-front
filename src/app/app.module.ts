@@ -8,13 +8,15 @@ import { MainviewComponent } from './components/mainview/mainview.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { UserService } from './services/user.service';
 import { HttpClientModule } from '@angular/common/http';
+import { AccountComponent } from './components/account/account.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     MainviewComponent,
-    FooterComponent
+    FooterComponent,
+    AccountComponent
   ],
   imports: [
     BrowserModule,

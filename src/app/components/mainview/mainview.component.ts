@@ -9,7 +9,7 @@ import { UserModel } from '../../models/user-model';
 })
 export class MainviewComponent implements OnInit {
 
-  public userModel?:UserModel;
+  userModel?:UserModel;
 
   constructor(public userService:UserService) { }  
 
@@ -21,7 +21,24 @@ export class MainviewComponent implements OnInit {
     this.userService.getUserData("kloc").subscribe( incUser =>
       {
         this.userModel=incUser;
+        this.userService.userData = incUser;
         console.log(incUser);
+      }
+    );
+  }
+
+  public refreshAPIhotspots(){
+    this.userService.refreshAPIhotspots("kloc").subscribe( e =>
+      {
+        console.log(e);
+      }
+    );
+  }
+
+  public refreshAPIaccount(){
+    this.userService.refreshAPIaccount("kloc").subscribe( e =>
+      {
+        console.log(e);
       }
     );
   }

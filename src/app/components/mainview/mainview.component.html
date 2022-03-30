@@ -1,9 +1,53 @@
-<div class="main-view-window">
-    <p>mainview works!</p>
+<div class="container-fluid">
+    <div class="row">
+        <p>mainview works!</p>
 
-    <button type="button" class="btn btn-info">Get user [DB]</button>
-    <button type="button" class="btn btn-sm btn-danger remove-btn" (click)="getUser()"><div><i class="far fa-trash-alt" ></i> Usuń </div></button>
-    
+        <app-account></app-account>
+
+        <div class="col-4">
+        </div>
+        <div class="col-4">
+            <div class="btn-group" role="group" aria-label="Basic example">
+                <button type="button" class="btn btn-sm btn-info" (click)="getUser()">
+                    <div><i class="far fa-trash-alt"></i> Get User [DB] </div>
+                </button>
+                <button type="button" class="btn btn-sm btn-info" (click)="refreshAPIhotspots()">
+                    <div><i class="far fa-trash-alt"></i> Get Hotspots from API </div>
+                </button>
+                <button type="button" class="btn btn-sm btn-info" (click)="refreshAPIaccount()">
+                    <div><i class="far fa-trash-alt"></i> Get Account from API </div>
+                </button>
+            </div>
+        </div>
+        <div class="col-4">
+        </div>
 
 
+        <table class="table table-hover">
+            <thead class="thead-light">
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Address</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Gain</th>
+                    <th scope="col">Elevation</th>
+                    <th scope="col">Rewards 24h</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of userModel!.hotspots; let index = index">
+                    <td>{{index}}</td>
+                    <td>{{item.name}}</td>
+                    <td>{{item.address}}</td>
+                    <td>{{item.price}}</td>
+                    <td>{{item.gain}}</td>
+                    <td>{{item.elevation}}</td>
+                    <td>{{item.rewards_24}}</td>
+                </tr>
+            </tbody>
+        </table>
+
+
+    </div>
 </div>
