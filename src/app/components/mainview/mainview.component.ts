@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../../services/user.service';
+import { UserModel } from '../../models/user-model';
 
 @Component({
   selector: 'app-mainview',
@@ -8,16 +9,19 @@ import { UserService } from '../../services/user.service';
 })
 export class MainviewComponent implements OnInit {
 
-  constructor(public userService:UserService) { }
+  public userModel?:UserModel;
+
+  constructor(public userService:UserService) { }  
 
   ngOnInit(): void {
+    this.getUser();
   }
 
   public getUser(){ 
-    this.userService.getUserData("kloc").subscribe( e=>
+    this.userService.getUserData("kloc").subscribe( incUser =>
       {
-        console.log(e);
-        console.log("sdasdf");
+        this.userModel=incUser;
+        console.log(incUser);
       }
     );
   }
