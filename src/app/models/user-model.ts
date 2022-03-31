@@ -58,4 +58,17 @@ export class Hotspots{
     block_added?:       string;
     block?:             string;
     address?:           string;
+
+    hotspotDto?:        HotspotDTO;
+}
+
+export class HotspotDTO{
+    price?:             number;
+    roi?:               number;
+    roi_days_left?:     number;
+    roi_days_past?:     number;
+    rewards_24?:        number;
+    rewards_7d?:        number;
+    rewards_30d?:       number;
+    rewards_lifetime?:  number;
 }
