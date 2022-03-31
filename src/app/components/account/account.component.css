@@ -5,7 +5,7 @@
     border-left: 5px;
     border-style: solid;
     border-radius: 10px;
-    border-color: rgb(60, 120, 177);
+    border-color: #2166D0;
     margin: 10px;
     padding: 25px;
     transition:ease-in-out;
@@ -15,4 +15,17 @@
     transition:ease-in-out;
     transition-duration: 0.1s;
     background-color: rgb(233, 233, 233);
+}
+.card-mein-caption{
+    font-size: 16px;
+}
+.card-mein-mieso{
+    font-size: 26px;
+    font-weight: 900;
+    color: #252422;
+}
+.card-mein-sub{
+    font-size: 18px;
+    font-weight: 600;
+    color: #6C696E;
 }

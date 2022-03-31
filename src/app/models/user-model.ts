@@ -3,6 +3,11 @@ export class UserModel {
     username?:      string;
     password?:      string;
     hntAccount?:    string;
+
+    acc_reward24?:          number;
+    acc_reward7d?:          number;
+    acc_reward30d?:         number;
+    acc_reward_lifetime?:   number;
     apiAccount?:    ApiAccount; // pojo
     hotspots?:      Hotspots[];   // pojo
 }
@@ -20,24 +25,25 @@ export class ApiAccount {
     dc_nonce?:  string;
     dc_balance?:  string;
     block?:  string;
-    balance?:  string;
+    balance?:  number;
     address?:  string;
 }
 
 export class Hotspots{
     id?:                string;
     userId?:            string;
-    price?:             string;
+    price?:             number;
     roi?:               string;
     roi_days_left?:     string;
     roi_days_past?:     string;
-    rewards_24?:        string;
-    rewards_7d?:        string;
-    rewards_30d?:       string;
+    rewards_24?:        number;
+    rewards_7d?:        number;
+    rewards_30d?:       number;
+    rewards_lifetime?:  number;
     lng?:               string;
     lat?:               string;
     timestamp_added?:   string;
-    reward_scale?:      string;
+    reward_scale?:      number;
     payer?:             string;
     owner?:             string;
     nonce?:             string;
@@ -47,8 +53,8 @@ export class Hotspots{
     location?:          string;
     last_poc_challenge?:string;
     last_change_block?: string;
-    gain?:              string;
-    elevation?:         string;
+    gain?:              number;
+    elevation?:         number;
     block_added?:       string;
     block?:             string;
     address?:           string;

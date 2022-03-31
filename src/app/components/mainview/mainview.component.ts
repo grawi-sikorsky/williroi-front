@@ -16,6 +16,7 @@ export class MainviewComponent implements OnInit {
 
   ngOnInit(): void {
     this.userService.getUserData("kloc");
+    this.userService.getPricesFromApi();
   }
 
   public getUser(){ 
@@ -36,5 +37,9 @@ export class MainviewComponent implements OnInit {
         console.log(e);
       }
     );
+  }
+
+  public getCoinGeckoPrices(){
+    this.userService.getPricesFromApi();    
   }
 }
