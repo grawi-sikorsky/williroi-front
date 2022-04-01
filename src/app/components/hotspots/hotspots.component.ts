@@ -18,11 +18,24 @@ export class HotspotsComponent implements OnInit {
   ngOnInit(): void {
     this.userService.currentUserData.subscribe(data => {
       this.userModel = data;
+      this.calculateROI();
     });
     
     this.userService.cg_price.subscribe( data =>{
       this.heliumPrice = data;
       console.warn(this.heliumPrice);
+    });
+
+    
+  }
+
+  public calculateROI(){
+    this.userModel.hotspots!.forEach(hotspot => {
+      hotspot.roi = hotspot.price! / (hotspot.rewards_24! * this.heliumPrice.helium?.usd!); // ROI
+
+      hotspot.roi_days_left = (hotspot.price! - (hotspot.rewards_lifetime! * this.heliumPrice.helium?.usd!)) / (hotspot.rewards_24! * this.heliumPrice.helium?.usd!); // BREAK EVEN DAYS LEFT
+
+      hotspot.roi_percent_left = ((hotspot.rewards_lifetime! * this.heliumPrice.helium?.usd!) / hotspot.price!)*100; // % LEFT
     });
   }
 }

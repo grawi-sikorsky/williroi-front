@@ -33,9 +33,9 @@ export class Hotspots{
     id?:                string;
     userId?:            string;
     price?:             number;
-    roi?:               string;
-    roi_days_left?:     string;
-    roi_days_past?:     string;
+    roi?:               number;
+    roi_days_left?:     number;
+    roi_percent_left?:  number;
     rewards_24?:        number;
     rewards_7d?:        number;
     rewards_30d?:       number;
