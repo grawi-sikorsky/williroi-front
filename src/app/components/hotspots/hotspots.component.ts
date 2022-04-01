@@ -18,15 +18,15 @@ export class HotspotsComponent implements OnInit {
   ngOnInit(): void {
     this.userService.currentUserData.subscribe(data => {
       this.userModel = data;
+
+      this.userService.cg_price.subscribe( data =>{
+        this.heliumPrice = data;
+
+        this.calculateROI();
+      });
       this.calculateROI();
     });
-    
-    this.userService.cg_price.subscribe( data =>{
-      this.heliumPrice = data;
-      console.warn(this.heliumPrice);
-    });
-
-    
+    this.calculateROI();
   }
 
   public calculateROI(){

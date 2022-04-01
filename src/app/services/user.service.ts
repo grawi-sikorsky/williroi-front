@@ -48,4 +48,8 @@ export class UserService {
       this.updatePriceData(data);
     })
   }
+
+  public refreshAPIaccountRewards(username:String){
+    return this.http.get( this.API_URL + "/user/" + username + "/api/accountrewards");
+  }
 }

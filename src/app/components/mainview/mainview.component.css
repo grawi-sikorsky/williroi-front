@@ -1,3 +1,20 @@
-.main-view-window{
+.hotspots-compete{
+    margin: 15px;
+}
+.btn-refresz {
+    color: #fff;
+    background-color: #2166d0;
+    border-color: #0d4daf;
+    margin: 5px;
+}
 
+.btn-refresz:hover {
+    color: #000;
+    background-color: #ffba2e;
+    border-color: #b97000;
+}
+.btn-refresz:focus {
+    color: #000;
+    background-color: #ffba2e;
+    border-color: #b97000;
 }

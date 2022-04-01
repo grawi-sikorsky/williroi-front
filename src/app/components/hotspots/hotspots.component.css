@@ -29,3 +29,17 @@
     color:#E53D00;
     text-decoration: none;
 }
+.percent-left{
+    text-align: left;
+    vertical-align: bottom;
+    font-size: 12px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 100;
+}
+.percent-right{
+    text-align: right;
+    vertical-align: bottom;
+    font-size: 12px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 100;
+}

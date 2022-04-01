@@ -12,8 +12,7 @@
             <th scope="col">Hotspot Price</th>
             <th scope="col">ROI</th>
             <th scope="col">Break even in</th>
-            <th scope="col">Percent done</th>
-            <th scope="col">Percent left</th>
+            <th scope="col">%  done / % left</th>
             <th scope="col">Profit</th>
         </tr>
     </thead>
@@ -28,10 +27,17 @@
             <td> <p class="hotspot-reward"> {{item.rewards_30d | number}} HNT<sup class="hotspot-reward-price"data-toggle="tooltip" data-placement="top" title="{{item.rewards_30d! * heliumPrice.helium?.pln! | number : '1.2-2'}} PLN"> {{ item.rewards_30d! * heliumPrice.helium?.usd! | number : '1.2-2' }} USD</sup></p></td>
             <td> <p class="hotspot-reward"> {{item.rewards_lifetime | number}} HNT<sup class="hotspot-reward-price"data-toggle="tooltip" data-placement="top" title="{{item.rewards_lifetime! * heliumPrice.helium?.pln! | number : '1.2-2'}} PLN"> {{ item.rewards_lifetime! * heliumPrice.helium?.usd! | number : '1.2-2' }} USD</sup></p></td>
             <td> <p class="hotspot-reward"> {{item.price}} $ </p></td>
-            <td> <p class="hotspot-reward" data-toggle="tooltip" data-placement="top" title="{{item.roi! / 30! | number : '1.2-2'}} months" > {{item.roi | number : '1.2-2'}} days </p></td>
-            <td> <p class="hotspot-reward" data-toggle="tooltip" data-placement="top" title="{{item.roi_days_left! / 30! | number : '1.2-2'}} months" > {{item.roi_days_left | number : '1.2-2'}} days </p></td>
-            <td> {{item.roi_percent_left! | number : '1.2-2' }} % </td>
-            <td> {{100 - item.roi_percent_left! | number : '1.2-2' }} %</td>
+            <td> <p class="hotspot-reward" data-toggle="tooltip" data-placement="top" title="{{item.roi! / 30! | number : '1.1-1'}} months" > {{item.roi | number : '1.1-1'}} days </p></td>
+            <td> <p class="hotspot-reward" data-toggle="tooltip" data-placement="top" title="{{item.roi_days_left! / 30! | number : '1.1-1'}} months" > {{item.roi_days_left | number : '1.1-1'}} days </p></td>
+            <td> 
+                <div class="row">
+                    <div class="col-6 percent-left"> <span style="vertical-align: bottom;"> {{item.roi_percent_left! | number : '1.1-1' }}% </span>  </div>
+                    <div class="col-6 percent-right">{{100 - item.roi_percent_left! | number : '1.1-1' }}% </div>
+                </div>
+                <div class="progress" style="height: 10px;">
+                    <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" [ngStyle]="{'width': item.roi_percent_left +'%'}" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" ></div>
+                </div> 
+            </td>
             <td> <p class="hotspot-reward">{{ (item.rewards_lifetime! * heliumPrice.helium?.usd!) - item.price! | number : '1.2-2'}} USD </p></td>
         </tr>
     </tbody>

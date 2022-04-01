@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UserService } from '../../services/user.service';
 import { UserModel } from '../../models/user-model';
 import { Subscription } from 'rxjs';
+import { Cgprice } from '../../models/cgprice';
 
 @Component({
   selector: 'app-mainview',
@@ -11,12 +12,21 @@ import { Subscription } from 'rxjs';
 export class MainviewComponent implements OnInit {
 
   userModel?:UserModel = {};
+  heliumPrice?:Cgprice = {};
 
   constructor(public userService:UserService) { }  
 
   ngOnInit(): void {
     this.userService.getUserData("kloc");
     this.userService.getPricesFromApi();
+
+    this.userService.currentUserData.subscribe(data => {
+      this.userModel = data;
+    });
+    
+    this.userService.cg_price.subscribe( data =>{
+      this.heliumPrice = data;
+    });
   }
 
   public getUser(){ 
@@ -41,5 +51,11 @@ export class MainviewComponent implements OnInit {
 
   public getCoinGeckoPrices(){
     this.userService.getPricesFromApi();    
+  }
+
+  refreshAPIaccountRewards(){
+    this.userService.refreshAPIaccountRewards("kloc").subscribe( e =>{
+      
+    })
   }
 }
