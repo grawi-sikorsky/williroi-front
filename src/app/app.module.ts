@@ -10,6 +10,7 @@ import { UserService } from './services/user.service';
 import { HttpClientModule } from '@angular/common/http';
 import { AccountComponent } from './components/account/account.component';
 import { HotspotsComponent } from './components/hotspots/hotspots.component';
+import { ActivityComponent } from './components/activity/activity.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { HotspotsComponent } from './components/hotspots/hotspots.component';
     MainviewComponent,
     FooterComponent,
     AccountComponent,
-    HotspotsComponent
+    HotspotsComponent,
+    ActivityComponent
   ],
   imports: [
     BrowserModule,

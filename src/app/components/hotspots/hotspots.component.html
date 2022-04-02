@@ -26,7 +26,7 @@
             <td> <p class="hotspot-reward"> {{item.rewards_7d | number}} HNT<sup class="hotspot-reward-price" data-toggle="tooltip" data-placement="top" title="{{item.rewards_7d! * heliumPrice.helium?.pln! | number : '1.2-2'}} PLN"> {{ item.rewards_7d! * heliumPrice.helium?.usd! | number : '1.2-2' }} $ </sup></p></td>
             <td> <p class="hotspot-reward"> {{item.rewards_30d | number}} HNT<sup class="hotspot-reward-price"data-toggle="tooltip" data-placement="top" title="{{item.rewards_30d! * heliumPrice.helium?.pln! | number : '1.2-2'}} PLN"> {{ item.rewards_30d! * heliumPrice.helium?.usd! | number : '1.2-2' }} USD</sup></p></td>
             <td> <p class="hotspot-reward"> {{item.rewards_lifetime | number}} HNT<sup class="hotspot-reward-price"data-toggle="tooltip" data-placement="top" title="{{item.rewards_lifetime! * heliumPrice.helium?.pln! | number : '1.2-2'}} PLN"> {{ item.rewards_lifetime! * heliumPrice.helium?.usd! | number : '1.2-2' }} USD</sup></p></td>
-            <td> <p class="hotspot-reward"> {{item.price}} $ </p></td>
+            <td> <p class="hotspot-reward" data-toggle="tooltip" data-placement="top" title="{{item.price! / heliumPrice.helium?.usd! | number : '1.1-1'}} HNT" > {{item.price}} $ </p></td>
             <td> <p class="hotspot-reward" data-toggle="tooltip" data-placement="top" title="{{item.roi! / 30! | number : '1.1-1'}} months" > {{item.roi | number : '1.1-1'}} days </p></td>
             <td> <p class="hotspot-reward" data-toggle="tooltip" data-placement="top" title="{{item.roi_days_left! / 30! | number : '1.1-1'}} months" > {{item.roi_days_left | number : '1.1-1'}} days </p></td>
             <td> 
