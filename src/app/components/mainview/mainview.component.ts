@@ -14,6 +14,7 @@ export class MainviewComponent implements OnInit {
   userModel?:UserModel = {};
   heliumPrice?:Cgprice = {};
 
+
   constructor(public userService:UserService) { }  
 
   ngOnInit(): void {
@@ -53,9 +54,31 @@ export class MainviewComponent implements OnInit {
     this.userService.getPricesFromApi();    
   }
 
-  refreshAPIaccountRewards(){
+  public refreshAPIaccountRewards(){
     this.userService.refreshAPIaccountRewards("kloc").subscribe( e =>{
-      
     })
+  }
+
+  public getCompeteHotspotsBarStyles(hotspot_reward24:number){
+      // colors
+      let letters = '0123456789ABCDEF';
+      let color = '#';
+      for (let i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+      }
+
+      // width
+      let barWidth = (hotspot_reward24 / this.userModel!.acc_reward24!) * 100;
+
+      console.warn(hotspot_reward24);
+      console.warn(barWidth);
+
+      const styles = {
+        'background-color' : color,
+        'width' : barWidth +'%'
+      };
+
+
+      return styles;
   }
 }
