@@ -1,29 +1,24 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">Navbar</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavDropdown">
-      <ul class="navbar-nav">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Features</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Pricing</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Dropdown link
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <a class="dropdown-item" href="#">Something else here</a>
-          </div>
-        </li>
-      </ul>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-williroi">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      <img src="/assets/williroi64x64.png" alt="" width="42" height="42" class="d-inline-block"> Will I ROI?
+    </a>
+
+    <div class="userDropMenu">
+      <div class="dropdown">
+        <a href="#" class="dropdown-toggle " role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <img class="userDropMenuImg" src="/assets/img/avatar_seagull.png">
+          <span> Witaj, klocu! </span>
+        </a>
+        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+          <!-- <li> <a class="dropdown-item" [routerLink]="['/profile']"><i class="fas fa-user"></i> Majne profajl</a></li> -->
+          <li> <a class="dropdown-item menu-profile"><i class="fas fa-user"></i> Mój profil</a></li>
+          <li> <a class="dropdown-item" href="#"><i class="fas fa-smoking"></i> Szmeterling</a></li>
+          <li> <a class="dropdown-item" href="#"><i class="fas fa-cogs"></i> Krankenwagen</a></li>
+          <li> <hr class="dropdown-divider"></li>
+          <li> <a class="dropdown-item" [routerLink]="['/login']" ><i class="fas fa-sign-out-alt"></i>Wychodzę, bo nie zniesę</a></li>
+        </ul>
+      </div>
     </div>
-  </nav>
+  </div>
+</nav>
