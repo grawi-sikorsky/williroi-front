@@ -11,6 +11,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { AccountComponent } from './components/account/account.component';
 import { HotspotsComponent } from './components/hotspots/hotspots.component';
 import { ActivityComponent } from './components/activity/activity.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HotspotdialogComponent } from './components/hotspotdialog/hotspotdialog.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -20,12 +23,15 @@ import { ActivityComponent } from './components/activity/activity.component';
     FooterComponent,
     AccountComponent,
     HotspotsComponent,
-    ActivityComponent
+    ActivityComponent,
+    HotspotdialogComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatDialogModule
   ],
   providers: [UserService],
   bootstrap: [AppComponent]

@@ -17,28 +17,28 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let item of userModel!.hotspots; let index = index">
+        <tr class="clickable-row" *ngFor="let hotspot of userModel!.hotspots; let index = index" (click)="hotspotDialog(hotspot)" >
             <td>{{index}}</td>
-            <td> <a class="hotspot-name" href="https://explorer.helium.com/hotspots/{{item.address}}" target="_blank">{{item.name}}</a></td>
-            <td>{{item.gain! / 10}} <sup>dbi</sup></td>
-            <td>{{item.elevation}} m</td>
-            <td> <p class="hotspot-reward"> {{item.rewards_24 | number}} HNT<sup class="hotspot-reward-price" data-toggle="tooltip" data-placement="top" title="{{item.rewards_24! * heliumPrice.helium?.pln! | number : '1.2-2'}} PLN"> {{ item.rewards_24! * heliumPrice.helium?.usd! | number : '1.2-2' }} USD</sup></p></td>
-            <td> <p class="hotspot-reward"> {{item.rewards_7d | number}} HNT<sup class="hotspot-reward-price" data-toggle="tooltip" data-placement="top" title="{{item.rewards_7d! * heliumPrice.helium?.pln! | number : '1.2-2'}} PLN"> {{ item.rewards_7d! * heliumPrice.helium?.usd! | number : '1.2-2' }} $ </sup></p></td>
-            <td> <p class="hotspot-reward"> {{item.rewards_30d | number}} HNT<sup class="hotspot-reward-price"data-toggle="tooltip" data-placement="top" title="{{item.rewards_30d! * heliumPrice.helium?.pln! | number : '1.2-2'}} PLN"> {{ item.rewards_30d! * heliumPrice.helium?.usd! | number : '1.2-2' }} USD</sup></p></td>
-            <td> <p class="hotspot-reward"> {{item.rewards_lifetime | number}} HNT<sup class="hotspot-reward-price"data-toggle="tooltip" data-placement="top" title="{{item.rewards_lifetime! * heliumPrice.helium?.pln! | number : '1.2-2'}} PLN"> {{ item.rewards_lifetime! * heliumPrice.helium?.usd! | number : '1.2-2' }} USD</sup></p></td>
-            <td> <p class="hotspot-reward" data-toggle="tooltip" data-placement="top" title="{{item.price! / heliumPrice.helium?.usd! | number : '1.1-1'}} HNT" > {{item.price}} $ </p></td>
-            <td> <p class="hotspot-reward" data-toggle="tooltip" data-placement="top" title="{{item.roi! / 30! | number : '1.1-1'}} months" > {{item.roi | number : '1.1-1'}} days </p></td>
-            <td> <p class="hotspot-reward" data-toggle="tooltip" data-placement="top" title="{{item.roi_days_left! / 30! | number : '1.1-1'}} months" > {{item.roi_days_left | number : '1.1-1'}} days </p></td>
+            <td> <a class="hotspot-name" href="https://explorer.helium.com/hotspots/{{hotspot.address}}" target="_blank">{{hotspot.name}}</a></td>
+            <td>{{hotspot.gain! / 10}} <sup>dbi</sup></td>
+            <td>{{hotspot.elevation}} m</td>
+            <td> <p class="hotspot-reward"> {{hotspot.rewards_24 | number}} HNT<sup class="hotspot-reward-price" data-toggle="tooltip" data-placement="top" title="{{hotspot.rewards_24! * heliumPrice.helium?.pln! | number : '1.2-2'}} PLN"> {{ hotspot.rewards_24! * heliumPrice.helium?.usd! | number : '1.2-2' }} USD</sup></p></td>
+            <td> <p class="hotspot-reward"> {{hotspot.rewards_7d | number}} HNT<sup class="hotspot-reward-price" data-toggle="tooltip" data-placement="top" title="{{hotspot.rewards_7d! * heliumPrice.helium?.pln! | number : '1.2-2'}} PLN"> {{ hotspot.rewards_7d! * heliumPrice.helium?.usd! | number : '1.2-2' }} $ </sup></p></td>
+            <td> <p class="hotspot-reward"> {{hotspot.rewards_30d | number}} HNT<sup class="hotspot-reward-price"data-toggle="tooltip" data-placement="top" title="{{hotspot.rewards_30d! * heliumPrice.helium?.pln! | number : '1.2-2'}} PLN"> {{ hotspot.rewards_30d! * heliumPrice.helium?.usd! | number : '1.2-2' }} USD</sup></p></td>
+            <td> <p class="hotspot-reward"> {{hotspot.rewards_lifetime | number}} HNT<sup class="hotspot-reward-price"data-toggle="tooltip" data-placement="top" title="{{hotspot.rewards_lifetime! * heliumPrice.helium?.pln! | number : '1.2-2'}} PLN"> {{ hotspot.rewards_lifetime! * heliumPrice.helium?.usd! | number : '1.2-2' }} USD</sup></p></td>
+            <td> <p class="hotspot-reward" data-toggle="tooltip" data-placement="top" title="{{hotspot.price! / heliumPrice.helium?.usd! | number : '1.1-1'}} HNT" > {{hotspot.price}} $ </p></td>
+            <td> <p class="hotspot-reward" data-toggle="tooltip" data-placement="top" title="{{hotspot.roi! / 30! | number : '1.1-1'}} months" > {{hotspot.roi | number : '1.1-1'}} days </p></td>
+            <td> <p class="hotspot-reward" data-toggle="tooltip" data-placement="top" title="{{hotspot.roi_days_left! / 30! | number : '1.1-1'}} months" > {{hotspot.roi_days_left | number : '1.1-1'}} days </p></td>
             <td> 
                 <div class="row">
-                    <div class="col-6 percent-left"> <span style="vertical-align: bottom;"> {{item.roi_percent_left! | number : '1.1-1' }}% </span>  </div>
-                    <div class="col-6 percent-right">{{100 - item.roi_percent_left! | number : '1.1-1' }}% </div>
+                    <div class="col-6 percent-left"> <span style="vertical-align: bottom;"> {{hotspot.roi_percent_left! | number : '1.1-1' }}% </span>  </div>
+                    <div class="col-6 percent-right">{{100 - hotspot.roi_percent_left! | number : '1.1-1' }}% </div>
                 </div>
                 <div class="progress" style="height: 10px;">
-                    <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" [ngStyle]="{'width': item.roi_percent_left +'%'}" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" ></div>
+                    <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" [ngStyle]="{'width': hotspot.roi_percent_left +'%'}" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" ></div>
                 </div> 
             </td>
-            <td> <p class="hotspot-reward">{{ (item.rewards_lifetime! * heliumPrice.helium?.usd!) - item.price! | number : '1.2-2'}} USD </p></td>
+            <td> <p class="hotspot-reward">{{ (hotspot.rewards_lifetime! * heliumPrice.helium?.usd!) - hotspot.price! | number : '1.2-2'}} USD </p></td>
         </tr>
     </tbody>
 </table>

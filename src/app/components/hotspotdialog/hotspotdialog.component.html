@@ -1,0 +1,129 @@
+<mat-dialog-content>
+    <div class="container-fluid">
+        <div style="padding-bottom: 20px; font-weight: 600;">
+            HOTSPOT DETAILS:
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <form class="hotspot-update"> 
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="col-md-12 hotspot-details-row">
+                                <div class="col-md-4 hotspot-details-label">
+                                    <p>Hotspot Name:</p>
+                                </div>
+                                <div class="col-md-98 hotspot-details-value">
+                                    {{hotspot.name}}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="col-md-12 hotspot-details-row">
+                                <div class="col-md-4 hotspot-details-label">
+                                    <p>Address:</p>
+                                </div>
+                                <div class="col-md-8 hotspot-details-value">
+                                    {{hotspot.address}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="col-md-12 hotspot-details-row">
+                                <div class="col-md-4 hotspot-details-label">
+                                    <p>Added:</p>
+                                </div>
+                                <div class="col-md-98 hotspot-details-value">
+                                    {{hotspot.timestamp_added}}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="col-md-12 hotspot-details-row">
+                                <div class="col-md-4 hotspot-details-label">
+                                    <p>Reward scale:</p>
+                                </div>
+                                <div class="col-md-8 hotspot-details-value">
+                                    {{hotspot.reward_scale}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="col-md-12 hotspot-details-row">
+                                <div class="col-md-4 hotspot-details-label">
+                                    <p>Nonce:</p>
+                                </div>
+                                <div class="col-md-98 hotspot-details-value">
+                                    {{hotspot.nonce}}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="col-md-12 hotspot-details-row">
+                                <div class="col-md-4 hotspot-details-label">
+                                    <p>Payer:</p>
+                                </div>
+                                <div class="col-md-8 hotspot-details-value">
+                                    {{hotspot.payer}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="col-md-12 hotspot-details-row">
+                                <div class="col-md-4 hotspot-details-label">
+                                    <p>Mode:</p>
+                                </div>
+                                <div class="col-md-98 hotspot-details-value">
+                                    {{hotspot.mode}}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="col-md-12 hotspot-details-row">
+                                <div class="col-md-4 hotspot-details-label">
+                                    <p>last_poc_challenge:</p>
+                                </div>
+                                <div class="col-md-8 hotspot-details-value">
+                                    {{hotspot.last_poc_challenge}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="col-md-12 hotspot-details-row">
+                                <div class="col-md-4 hotspot-details-label">
+                                    <p>last_change_block:</p>
+                                </div>
+                                <div class="col-md-98 hotspot-details-value">
+                                    {{hotspot.last_change_block}}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="col-md-12 hotspot-details-row">
+                                <div class="col-md-4 hotspot-details-label">
+                                    <p>owner:</p>
+                                </div>
+                                <div class="col-md-8 hotspot-details-value">
+                                    {{hotspot.owner}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="text-right">
+        <button mat-raised-button color="primary" mat-dialog-close type="submit" >Aktualizuj</button>
+    </div>
+
+  </mat-dialog-content>

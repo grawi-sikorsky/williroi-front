@@ -9,7 +9,7 @@ export class UserModel {
     acc_reward30d?:         number;
     acc_reward_lifetime?:   number;
     apiAccount?:    ApiAccount; // pojo
-    hotspots?:      Hotspots[];   // pojo
+    hotspots?:      Hotspot[];   // pojo
 }
 
 export class ApiAccount {
@@ -29,7 +29,7 @@ export class ApiAccount {
     address?:  string;
 }
 
-export class Hotspots{
+export class Hotspot{
     id?:                string;
     userId?:            string;
     price?:             number;

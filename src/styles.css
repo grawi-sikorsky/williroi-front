@@ -1,3 +1,4 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
 /* You can add global styles to this file, and also import other style files */
 html, body {
     /* make sure the body does not have a margin */
@@ -10,3 +11,5 @@ html, body {
     min-height: 100%;
     margin-bottom: -5%;
 }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
