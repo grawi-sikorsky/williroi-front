@@ -1,7 +1,129 @@
 <mat-dialog-content>
     <div class="container-fluid">
         <div style="padding-bottom: 20px; font-weight: 600;">
-            HOTSPOT DETAILS:
+            <div class="row">
+                <div class="col-md-12" style="padding-top: 25px;">
+                </div>
+                <div class="col-md-2">
+                    <div class="card-mein">
+                        <div class="card-mein-caption">Rewards 24h:</div>
+                        <div class="card-mein-mieso">
+                            {{ this.hotspot.rewards_24 | number }} HNT
+                        </div>
+                        <div class="card-mein-sub">
+                            {{ this.hotspot.rewards_24! * this.prices.helium?.usd! | number : '1.2-2' }} USD
+                        </div>
+                        <div class="card-mein-sub">
+                            {{ this.hotspot.rewards_24! * this.prices.helium?.pln! | number : '1.2-2' }} PLN
+                        </div>
+                    </div> 
+                </div>
+                <div class="col-md-2">
+                    <div class="card-mein">
+                        <div class="card-mein-caption">Rewards 7 day:</div>
+                        <div class="card-mein-mieso">
+                            {{this.hotspot.rewards_7d | number}} HNT
+                        </div>
+                        <div class="card-mein-sub">
+                            {{this.hotspot.rewards_7d! * this.prices.helium?.usd! | number : '1.2-2' }} USD
+                        </div>
+                        <div class="card-mein-sub">
+                            {{this.hotspot.rewards_7d! * this.prices.helium?.pln! | number : '1.2-2' }} PLN
+                        </div>
+                    </div> 
+                </div>
+                <div class="col-md-2">
+                    <div class="card-mein">
+                        <div class="card-mein-caption">Reawrds 30 day:</div>
+                        <div class="card-mein-mieso">
+                            {{this.hotspot.rewards_30d | number }} HNT
+                        </div>
+                        <div class="card-mein-sub">
+                            {{this.hotspot.rewards_30d! * this.prices.helium?.usd! | number : '1.2-2' }} USD
+                        </div>
+                        <div class="card-mein-sub">
+                            {{this.hotspot.rewards_30d! * this.prices.helium?.pln! | number : '1.2-2' }} PLN
+                        </div>
+                    </div> 
+                </div>
+                <div class="col-md-2">
+                    <div class="card-mein">
+                        <div class="card-mein-caption">Lifetime Rewards:</div>
+                        <div class="card-mein-mieso">
+                            {{this.hotspot.rewards_lifetime | number}} HNT
+                        </div>
+                        <div class="card-mein-sub">
+                            {{this.hotspot.rewards_lifetime! * this.prices.helium?.usd! | number : '1.2-2' }} USD
+                        </div>
+                        <div class="card-mein-sub">
+                            {{this.hotspot.rewards_lifetime! * this.prices.helium?.pln! | number : '1.2-2' }} PLN
+                        </div>
+                    </div> 
+                </div>
+                <div class="col-md-2">
+                    <div class="card-mein">
+                        <div class="card-mein-caption">Transmit scale:</div>
+                        <div class="card-mein-mieso">
+                            {{this.hotspot.reward_scale | number : '1.2-2' }}
+                        </div>
+                        <div class="card-mein-sub">
+                            {{this.hotspot.reward_scale! * this.prices.helium?.usd! | number : '1.2-2' }} USD
+                        </div>
+                        <div class="card-mein-sub">
+                            {{this.hotspot.reward_scale! * this.prices.helium?.pln! | number : '1.2-2' }} PLN
+                        </div>
+                    </div> 
+                </div>
+                <div class="col-md-2">
+                    <div class="card-mein">
+                        <div class="card-mein-caption">Hotspot rewards:</div>
+                        <div class="card-mein-mieso">
+                            {{ (this.hotspot.rewards_24! / 100000000) | number}} HNT
+                        </div>
+                        <div class="card-mein-sub">
+                            {{ ((this.hotspot.rewards_24! / 100000000) *  this.prices.helium?.usd!)  | number : '1.2-2' }} USD
+                        </div>
+                        <div class="card-mein-sub">
+                            {{ ((this.hotspot.rewards_24! / 100000000) *  this.prices.helium?.pln!)  | number : '1.2-2' }} PLN
+                        </div>
+                    </div> 
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-2">
+                    <div class="card-mein">
+                        <div class="card-mein-caption">Hotspot count:</div>
+                        <div class="card-mein-mieso">
+                            {{this.hotspot.rewards_lifetime}} pcs
+                        </div>
+                    </div> 
+                </div>
+                <div class="col-md-2">
+                    <div class="card-mein">
+                        bb
+                    </div> 
+                </div>
+                <div class="col-md-2">
+                    <div class="card-mein">
+                        cc
+                    </div> 
+                </div>
+                <div class="col-md-2">
+                    <div class="card-mein">
+                        dd
+                    </div> 
+                </div>
+                <div class="col-md-2">
+                    <div class="card-mein">
+                        ee
+                    </div> 
+                </div>
+                <div class="col-md-2">
+                    <div class="card-mein">
+                        ff
+                    </div> 
+                </div>
+            </div>
         </div>
         <div class="row">
             <div class="col-md-12">

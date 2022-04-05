@@ -70,9 +70,6 @@ export class MainviewComponent implements OnInit {
       // width
       let barWidth = (hotspot_reward24 / this.userModel!.acc_reward24!) * 100;
 
-      console.warn(hotspot_reward24);
-      console.warn(barWidth);
-
       const styles = {
         'background-color' : color,
         'width' : barWidth +'%'

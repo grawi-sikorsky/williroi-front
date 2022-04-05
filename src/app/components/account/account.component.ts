@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { MainviewComponent } from '../mainview/mainview.component';
-import { UserModel, ApiAccount } from '../../models/user-model';
-import { UserService } from 'src/app/services/user.service';
-import { Subscription } from 'rxjs';
+import { UserService } from 'app/services/user.service';
 import { Cgprice } from '../../models/cgprice';
+import { UserModel } from '../../models/user-model';
+import { MainviewComponent } from '../mainview/mainview.component';
+
 
 @Component({
   selector: 'app-account',

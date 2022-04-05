@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService } from '../../services/user.service';
-import { UserModel, HotspotDTO, Hotspot } from '../../models/user-model';
-import { Cgprice } from 'src/app/models/cgprice';
 import { MatDialog } from '@angular/material/dialog';
+import { Cgprice } from 'app/models/cgprice';
+import { Hotspot, UserModel } from '../../models/user-model';
+import { UserService } from '../../services/user.service';
 import { HotspotdialogComponent } from '../hotspotdialog/hotspotdialog.component';
 
 @Component({
@@ -42,7 +42,7 @@ export class HotspotsComponent implements OnInit {
   }
 
   public hotspotDialog(hotspot:Hotspot): void {
-    const dialogRef = this.hsdialog.open(HotspotdialogComponent, {width:"950px", data: hotspot});
+    const dialogRef = this.hsdialog.open(HotspotdialogComponent, {width:"85%", height:"85%", data:{ hotspot:hotspot, prices:this.heliumPrice } });
     dialogRef.afterClosed().subscribe(data=>{
       console.log("Hotspot Dialog zamkniety");
     })

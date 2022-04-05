@@ -1,9 +1,9 @@
-import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { UserModel } from '../models/user-model';
-import { environment } from 'src/environments/environment';
-import { BehaviorSubject, Observable, Subject } from 'rxjs';
+import { Injectable } from '@angular/core';
+import { environment } from 'environments/environment';
+import { Subject } from 'rxjs';
 import { Cgprice } from '../models/cgprice';
+import { UserModel } from '../models/user-model';
 
 @Injectable({
   providedIn: 'root'
