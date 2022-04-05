@@ -17,7 +17,7 @@
     </div>
     <div class="col-md-2">
         <div class="card-mein">
-            <div class="card-mein-caption">Rewards 24h:</div>
+            <div class="card-mein-caption">Account Rewards 24h:</div>
             <div class="card-mein-mieso">
                 {{ this.userModel.acc_reward24 | number }} HNT
             </div>
@@ -26,20 +26,6 @@
             </div>
             <div class="card-mein-sub">
                 {{ this.userModel.acc_reward24! * this.heliumPrice.helium?.pln! | number : '1.2-2' }} PLN
-            </div>
-        </div> 
-    </div>
-    <div class="col-md-2">
-        <div class="card-mein">
-            <div class="card-mein-caption">Rewards yesterday:</div>
-            <div class="card-mein-mieso">
-                {{this.userModel.acc_reward24 | number }} HNT
-            </div>
-            <div class="card-mein-sub">
-                {{this.heliumPrice.helium?.usd }} USD
-            </div>
-            <div class="card-mein-sub">
-                {{this.heliumPrice.helium?.pln }} PLN
             </div>
         </div> 
     </div>
@@ -85,8 +71,6 @@
             </div>
         </div> 
     </div>
-</div>
-<div class="row">
     <div class="col-md-2">
         <div class="card-mein">
             <div class="card-mein-caption">Hotspot count:</div>
@@ -95,6 +79,8 @@
             </div>
         </div> 
     </div>
+</div>
+<div class="row">
     <div class="col-md-2">
         <div class="card-mein">
             bb

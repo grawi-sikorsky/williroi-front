@@ -31,7 +31,6 @@ export class UserService {
   {
     return this.http.get<UserModel>( this.API_URL + "/user/" + username).subscribe( data => {
         this.updateUserData(data);
-        console.warn(data);
       });
   }
 

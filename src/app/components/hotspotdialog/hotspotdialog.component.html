@@ -1,6 +1,12 @@
 <mat-dialog-content>
     <div class="container-fluid">
-        <div style="padding-bottom: 20px; font-weight: 600;">
+        <div style="padding-bottom: 20px;">
+
+            <div style="font-weight: 600; font-size: 18px; text-align: center;">
+                {{ this.hotspot.name }}
+            </div>
+
+
             <div class="row">
                 <div class="col-md-12" style="padding-top: 25px;">
                 </div>
@@ -89,41 +95,38 @@
                     </div> 
                 </div>
             </div>
+
             <div class="row">
-                <div class="col-md-2">
+                <div class="col-md-4">
                     <div class="card-mein">
-                        <div class="card-mein-caption">Hotspot count:</div>
+                        <div class="card-mein-caption">Estimated ROI:</div>
                         <div class="card-mein-mieso">
-                            {{this.hotspot.rewards_lifetime}} pcs
+                            {{ (this.hotspot.rewards_24! / 100000000) | number}} HNT
+                        </div>
+                        <div class="card-mein-sub">
+                            {{ ((this.hotspot.rewards_24! / 100000000) *  this.prices.helium?.usd!)  | number : '1.2-2' }} USD
+                        </div>
+                        <div class="card-mein-sub">
+                            {{ ((this.hotspot.rewards_24! / 100000000) *  this.prices.helium?.pln!)  | number : '1.2-2' }} PLN
                         </div>
                     </div> 
                 </div>
-                <div class="col-md-2">
+                <div class="col-md-4">
                     <div class="card-mein">
-                        bb
-                    </div> 
-                </div>
-                <div class="col-md-2">
-                    <div class="card-mein">
-                        cc
-                    </div> 
-                </div>
-                <div class="col-md-2">
-                    <div class="card-mein">
-                        dd
-                    </div> 
-                </div>
-                <div class="col-md-2">
-                    <div class="card-mein">
-                        ee
-                    </div> 
-                </div>
-                <div class="col-md-2">
-                    <div class="card-mein">
-                        ff
+                        <div class="card-mein-caption">Hotspot rewards:</div>
+                        <div class="card-mein-mieso">
+                            {{ (this.hotspot.rewards_24! / 100000000) | number}} HNT
+                        </div>
+                        <div class="card-mein-sub">
+                            {{ ((this.hotspot.rewards_24! / 100000000) *  this.prices.helium?.usd!)  | number : '1.2-2' }} USD
+                        </div>
+                        <div class="card-mein-sub">
+                            {{ ((this.hotspot.rewards_24! / 100000000) *  this.prices.helium?.pln!)  | number : '1.2-2' }} PLN
+                        </div>
                     </div> 
                 </div>
             </div>
+        
         </div>
         <div class="row">
             <div class="col-md-12">

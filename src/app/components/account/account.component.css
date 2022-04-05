@@ -6,6 +6,7 @@
     border-style: solid;
     border-radius: 10px;
     border-color: #2166D0;
+    background-color: #f5fcff;
     margin: 10px;
     padding: 25px;
     transition:ease-in-out;
@@ -31,7 +32,8 @@
 .card-mein-sub{
     font-size: 18px;
     font-weight: 400;
-    color: #793ca3;
+    /* color: #793ca3; */
+    color: #365a1f;
     cursor: default;
     line-height: 22px;
 }

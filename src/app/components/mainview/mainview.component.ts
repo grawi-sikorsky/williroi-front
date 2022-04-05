@@ -75,7 +75,6 @@ export class MainviewComponent implements OnInit {
         'width' : barWidth +'%'
       };
 
-
       return styles;
   }
 }
