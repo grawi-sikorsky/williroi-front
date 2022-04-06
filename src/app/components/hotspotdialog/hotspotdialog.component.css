@@ -69,3 +69,21 @@
     /* color:#793ca3; */
     cursor: pointer;
 }
+.btn-update-price {
+    color: #fff;
+    background-color: #5e23a9;
+    border-color: #451485;
+    margin: 5px;
+}
+
+.btn-update-price:hover {
+    color: #000;
+    background-color: #ffba2e;
+    border-color: #b97000;
+}
+.btn-update-price:focus {
+    color: #000;
+    background-color: #ffba2e;
+    border-color: #b97000;
+    box-shadow: 0 0 0 0.25rem rgba(129, 11, 147, 0.5);
+}
