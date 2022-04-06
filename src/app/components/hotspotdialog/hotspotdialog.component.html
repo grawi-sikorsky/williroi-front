@@ -99,29 +99,57 @@
             <div class="row">
                 <div class="col-md-4">
                     <div class="card-mein">
-                        <div class="card-mein-caption">Estimated ROI:</div>
-                        <div class="card-mein-mieso">
-                            {{ (this.hotspot.rewards_24! / 100000000) | number}} HNT
-                        </div>
-                        <div class="card-mein-sub">
-                            {{ ((this.hotspot.rewards_24! / 100000000) *  this.prices.helium?.usd!)  | number : '1.2-2' }} USD
-                        </div>
-                        <div class="card-mein-sub">
-                            {{ ((this.hotspot.rewards_24! / 100000000) *  this.prices.helium?.pln!)  | number : '1.2-2' }} PLN
+                        <div class="row">
+                            <div class="card-mein-caption">Estimated ROI:</div>
+                            <div class="col-md-6">
+                                <div class="card-mein-mieso">
+                                    <p class="hotspot-reward" data-toggle="tooltip" data-placement="top" title="~ {{hotspot.roi! / 30! | number : '1.1-1'}} months" > {{hotspot.roi | number : '1.1-1'}} days<sup class="hotspot-roi-sup">24h</sup> </p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card-mein-mieso">
+                                    <p class="hotspot-reward" data-toggle="tooltip" data-placement="top" title="~ {{hotspot.roi7d! / 30! | number : '1.1-1'}} months" > {{hotspot.roi7d | number : '1.1-1'}} days<sup class="hotspot-roi-sup">7d</sup> </p>
+                                </div>
+                            </div>
                         </div>
                     </div> 
                 </div>
                 <div class="col-md-4">
                     <div class="card-mein">
-                        <div class="card-mein-caption">Hotspot rewards:</div>
-                        <div class="card-mein-mieso">
-                            {{ (this.hotspot.rewards_24! / 100000000) | number}} HNT
+                        <div class="row">
+                            <div class="card-mein-caption">Break-even in:</div>
+                            <div class="col-md-6">
+                                <div class="card-mein-mieso">
+                                    <p class="hotspot-reward" data-toggle="tooltip" data-placement="top" title="~ {{hotspot.roi_days_left! / 30! | number : '1.1-1'}} months" > {{hotspot.roi_days_left | number : '1.1-1'}} days<sup class="hotspot-roi-sup">24h</sup> </p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card-mein-caption"></div>
+                                <div class="card-mein-mieso">
+                                    <p class="hotspot-reward" data-toggle="tooltip" data-placement="top" title="~ {{hotspot.roi_days_left7d! / 30! | number : '1.1-1'}} months" > {{hotspot.roi_days_left7d | number : '1.1-1'}} days<sup class="hotspot-roi-sup">7d</sup> </p>
+                                </div>
+                            </div>
                         </div>
-                        <div class="card-mein-sub">
-                            {{ ((this.hotspot.rewards_24! / 100000000) *  this.prices.helium?.usd!)  | number : '1.2-2' }} USD
-                        </div>
-                        <div class="card-mein-sub">
-                            {{ ((this.hotspot.rewards_24! / 100000000) *  this.prices.helium?.pln!)  | number : '1.2-2' }} PLN
+                    </div> 
+                </div>
+                <div class="col-md-4">
+                    <div class="card-mein">
+                        <div class="row">
+                            <div class="card-mein-caption" style="margin-bottom: 10px;" >Unit price:</div>
+                            <div class="col-md-6">
+                                <div class="card-mein-mieso">
+                                    <input class="form-control" type="number" min="0" [(ngModel)]="hotspot.price" >
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card-mein-caption"></div>
+                                <div class="card-mein-mieso">
+                                    $                 
+                                    <button type="button" class="btn btn-sm btn-refresz btn-primary" onclick="submit">
+                                        <div><i class="fas fa-sync-alt"></i> Update </div>
+                                    </button>
+                                </div>
+                            </div>
                         </div>
                     </div> 
                 </div>

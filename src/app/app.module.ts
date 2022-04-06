@@ -14,6 +14,7 @@ import { ActivityComponent } from './components/activity/activity.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HotspotdialogComponent } from './components/hotspotdialog/hotspotdialog.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { MatDialogModule } from '@angular/material/dialog';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,

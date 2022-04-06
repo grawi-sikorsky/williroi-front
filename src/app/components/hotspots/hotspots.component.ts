@@ -34,8 +34,10 @@ export class HotspotsComponent implements OnInit {
   public calculateROI(){
     this.userModel.hotspots!.forEach(hotspot => {
       hotspot.roi = hotspot.price! / (hotspot.rewards_24! * this.heliumPrice.helium?.usd!); // ROI
+      hotspot.roi7d = hotspot.price! / (hotspot.rewards_7d! * this.heliumPrice.helium?.usd! / 7); // ROI [7d]
 
       hotspot.roi_days_left = (hotspot.price! - (hotspot.rewards_lifetime! * this.heliumPrice.helium?.usd!)) / (hotspot.rewards_24! * this.heliumPrice.helium?.usd!); // BREAK EVEN DAYS LEFT
+      hotspot.roi_days_left7d = (hotspot.price! - (hotspot.rewards_lifetime! * this.heliumPrice.helium?.usd!)) / (hotspot.rewards_7d! * this.heliumPrice.helium?.usd! / 7 ); // BREAK EVEN DAYS LEFT [7d]
 
       hotspot.roi_percent_left = ((hotspot.rewards_lifetime! * this.heliumPrice.helium?.usd!) / hotspot.price!)*100; // % LEFT
     });
