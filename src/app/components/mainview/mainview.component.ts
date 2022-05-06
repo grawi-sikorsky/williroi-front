@@ -61,7 +61,7 @@ export class MainviewComponent implements OnInit {
 
   public getCompeteHotspotsBarStyles(hotspot_reward24:number){
       // colors
-      let letters = '4446456789ABCDEF';
+      let letters = '123456789ABCDC2';
       let color = '#';
       for (let i = 0; i < 6; i++) {
         color += letters[Math.floor(Math.random() * 16)];
