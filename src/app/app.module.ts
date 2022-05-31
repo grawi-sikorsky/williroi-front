@@ -15,6 +15,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HotspotdialogComponent } from './components/hotspotdialog/hotspotdialog.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { FormsModule } from '@angular/forms';
+import { TestchartComponent } from './testchart/testchart.component';
+import { NgChartsModule } from 'ng2-charts';
+
 
 @NgModule({
   declarations: [
@@ -25,7 +28,8 @@ import { FormsModule } from '@angular/forms';
     AccountComponent,
     HotspotsComponent,
     ActivityComponent,
-    HotspotdialogComponent
+    HotspotdialogComponent,
+    TestchartComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +37,8 @@ import { FormsModule } from '@angular/forms';
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MatDialogModule
+    MatDialogModule,
+    NgChartsModule
   ],
   providers: [UserService],
   bootstrap: [AppComponent]

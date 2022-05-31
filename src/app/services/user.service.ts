@@ -51,4 +51,8 @@ export class UserService {
   public refreshAPIaccountRewards(username:String){
     return this.http.get( this.API_URL + "/user/" + username + "/api/accountrewards");
   }
+
+  public getRewardsForChartFromHeliumApi(accountAddress:String){
+    return this.http.get( "https://api.helium.io/v1/hotspots/1126G1HMj1zM9WbDPfXxeheFUU6HG4ffFh7c97sHWvaS5ahRTSTM/rewards/sum?max_time=2022-05-31&min_time=2022-03-01&bucket=day" );
+  }
 }

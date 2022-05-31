@@ -18,6 +18,15 @@ export class MainviewComponent implements OnInit {
   constructor(public userService:UserService) { }  
 
   ngOnInit(): void {
+    // test chart
+    this.userService.getRewardsForChartFromHeliumApi("username").subscribe( chartRawData =>
+      {
+        console.log("CHART RAW DATA:");
+        console.log(chartRawData);
+        
+      });
+    // /test end
+
     this.userService.getUserData("kloc");
     this.userService.getPricesFromApi();
 
