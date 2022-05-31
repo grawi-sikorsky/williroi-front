@@ -3,6 +3,7 @@ import { UserService } from '../services/user.service';
 import { ChartData, ChartOptions } from 'chart.js';
 import { chartRawData, data } from '../models/chart-raw-data';
 import { JsonpClientBackend } from '@angular/common/http';
+import { DatePipe } from '@angular/common';
 
 
 @Component({
@@ -23,7 +24,9 @@ export class TestchartComponent implements OnInit {
       this.chartRawData.data?.forEach(element => {
 
         this.ldataList.push(element.total!);
-        this.ldataLabels.push(element.timestamp!);
+        this.ldataLabels.push(this.pipe.transform(element.timestamp!,'dd/MM/yyyy'));
+
+        console.log(new DatePipe('en-US').transform(element.timestamp,'dd/MM/yyyy'));
 
       });
 
@@ -36,6 +39,8 @@ export class TestchartComponent implements OnInit {
 
     });
   }
+
+  pipe = new DatePipe('en-US'); // Use your own locale
   
   chartRawData?:chartRawData;
   ldataList: string[] = [];
