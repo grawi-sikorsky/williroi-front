@@ -19,12 +19,12 @@ export class MainviewComponent implements OnInit {
 
   ngOnInit(): void {
     // test chart
-    this.userService.getRewardsForChartFromHeliumApi("username").subscribe( chartRawData =>
-      {
-        console.log("CHART RAW DATA:");
-        console.log(chartRawData);
+    // this.userService.getRewardsForChartFromHeliumApi("username").subscribe( chartRawData =>
+    //   {
+    //     console.log("CHART RAW DATA:");
+    //     console.log(chartRawData);
         
-      });
+    //   });
     // /test end
 
     this.userService.getUserData("kloc");
