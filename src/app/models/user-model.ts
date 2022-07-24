@@ -8,11 +8,11 @@ export class UserModel {
     acc_reward7d?:          number;
     acc_reward30d?:         number;
     acc_reward_lifetime?:   number;
-    apiAccount?:    ApiAccount; // pojo
+    accountModel?:    AccountModel; // pojo
     hotspots?:      Hotspot[];   // pojo
 }
 
-export class ApiAccount {
+export class AccountModel {
     id?: string;
     validator_count?: string;
     staked_balance?: string;

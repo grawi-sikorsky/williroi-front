@@ -5,6 +5,7 @@ import { chartRawData, data } from '../models/chart-raw-data';
 import { JsonpClientBackend } from '@angular/common/http';
 import { DatePipe, formatDate } from '@angular/common';
 import { DateAdapter } from '@angular/material/core';
+import { NgChartsModule } from 'ng2-charts';
 
 
 @Component({
@@ -34,6 +35,13 @@ export class TestchartComponent implements OnInit {
       this.ldataSet.push({
         data:this.ldataList,
         label:"Mining rewards",
+        backgroundColor: 'rgba(148,159,177,0.5)',
+        borderColor: 'rgba(148,159,177,1)',
+        pointBackgroundColor: 'rgba(148,159,177,1)',
+        pointBorderColor: '#fff',
+        pointHoverBackgroundColor: '#fff',
+        pointHoverBorderColor: 'rgba(148,159,177,0.8)',
+        fill: 'origin',
       })
       
 

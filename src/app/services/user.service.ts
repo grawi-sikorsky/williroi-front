@@ -38,7 +38,7 @@ export class UserService {
     return this.http.get( this.API_URL + "/user/" + username + "/api/hotspots");
   }
 
-  public refreshAPIaccount(username:String){
+  public refreshAccountModel(username:String){
     return this.http.get( this.API_URL + "/user/" + username + "/api/account");
   }
 

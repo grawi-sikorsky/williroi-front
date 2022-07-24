@@ -51,8 +51,8 @@ export class MainviewComponent implements OnInit {
     );
   }
 
-  public refreshAPIaccount(){
-    this.userService.refreshAPIaccount("kloc").subscribe( e =>
+  public refreshAccountModel(){
+    this.userService.refreshAccountModel("12zQHwN4HkZX1f7Noznkc759rfFDkNefMR8gek9MTd8j4y7ftX9").subscribe( e =>
       {
         console.log(e);
       }
